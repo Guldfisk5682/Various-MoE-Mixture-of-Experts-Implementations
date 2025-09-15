@@ -12,8 +12,8 @@ class Expert(nn.Module):
         self.dropout = nn.Dropout(dropout_rate)
 
     def forward(self, x):
-        x = F.silu(self.dense1(x)) * self.dense2(x)
-        x = self.dense3(x)
+        x = F.silu(self.dense2(x)) * self.dense3(x)
+        x = self.dense1(x)
         return self.dropout(x)
 
 
